@@ -4210,6 +4210,14 @@ globby@^10.0.0:
     merge2 "^1.2.3"
     slash "^3.0.0"
 
+google-proto-files@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/google-proto-files/-/google-proto-files-1.1.2.tgz#d24c589aea5435db8d4cf3cefdbbf5542664d58a"
+  integrity sha512-j5z6RH5Ke50T0vAgSQsSvsIhJzgXp5Q3v1hWnqf+8TFFixpgjZFQMQhRheglYE23BTfxL3LL1UIXdx/obhixiQ==
+  dependencies:
+    protobufjs "^6.8.0"
+    walkdir "^0.4.0"
+
 google-protobuf@^3.11.2:
   version "3.11.2"
   resolved "https://registry.yarnpkg.com/google-protobuf/-/google-protobuf-3.11.2.tgz#43272974521a5cec35a21f62730cf517a5a8e38c"
@@ -7393,7 +7401,7 @@ protobufjs@^5.0.3:
     glob "^7.0.5"
     yargs "^3.10.0"
 
-protobufjs@^6.8.6:
+protobufjs@^6.8.0, protobufjs@^6.8.6:
   version "6.8.8"
   resolved "https://registry.yarnpkg.com/protobufjs/-/protobufjs-6.8.8.tgz#c8b4f1282fd7a90e6f5b109ed11c84af82908e7c"
   integrity sha512-AAmHtD5pXgZfi7GMpllpO3q1Xw1OYldr+dMUlAnffGTAhqkg72WdmSY71uKBF/JuyiKs8psYbtKrhi0ASCD8qw==
@@ -9181,6 +9189,11 @@ w3c-hr-time@^1.0.1:
   integrity sha1-gqwr/2PZUOqeMYmlimViX+3xkEU=
   dependencies:
     browser-process-hrtime "^0.1.2"
+
+walkdir@^0.4.0:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/walkdir/-/walkdir-0.4.1.tgz#dc119f83f4421df52e3061e514228a2db20afa39"
+  integrity sha512-3eBwRyEln6E1MSzcxcVpQIhRG8Q1jLvEqRmCZqS3dsfXEDR/AhOF4d+jHg1qvDCpYaVRZjENPQyrVxAkQqxPgQ==
 
 walker@^1.0.7, walker@~1.0.5:
   version "1.0.7"

@@ -1,12 +1,10 @@
 require 'graphql'
 require 'grpc'
 require 'json'
-require_relative './gen/federation_api_pb'
-require_relative './gen/federation_api_services_pb'
+require_relative './gen/graphql_api_pb'
+require_relative './gen/graphql_api_services_pb'
 
-# grpc_tools_ruby_protoc -I proto/ --ruby_out=gen/ --grpc_out=gen/ proto/federation_api.proto
-
-class ServerImpl < Graphql::FederationAPI::Service
+class ServerImpl < Graphql::GraphqlAPI::Service
   def initialize(schema)
     self.schema = schema
   end
@@ -32,6 +30,32 @@ class ServerImpl < Graphql::FederationAPI::Service
     )
 
     Graphql::ExecuteResponse.new(body: JSON.dump(result.to_h))
+  end
+
+  def http_execute(request, _call)
+    puts "!!!"
+    puts request
+    # req_vars = JSON.parse(request.body)
+    # query = req_vars['query']
+    # operation_name = req_vars['operationName']
+    # vars = req_vars['variables'] || {}
+
+    # graphql_debugging = {
+    #   query: query,
+    #   operationName: operation_name,
+    #   vars: vars,
+    #   schema: schema,
+    # }
+    # puts graphql_debugging.inspect
+
+    # result = schema.execute(
+    #   query,
+    #   operation_name: operation_name,
+    #   variables: vars,
+    # )
+
+    # Graphql::ExecuteResponse.new(body: JSON.dump(result.to_h))
+    Graphql::ExecuteResponse.new(body: JSON.dump({}))
   end
 
   private

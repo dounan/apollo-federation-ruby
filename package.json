@@ -18,6 +18,7 @@
     "@apollo/gateway": "0.11.6",
     "@grpc/proto-loader": "^0.5.3",
     "apollo-server": "2.6.3",
+    "google-proto-files": "^1.1.2",
     "google-protobuf": "^3.11.2",
     "graphql": "14.3.1",
     "grpc": "^1.24.2"
