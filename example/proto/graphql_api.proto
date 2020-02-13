@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package graphql;
+
+option java_multiple_files = true;
+option java_outer_classname = "GraphqlApiProto";
+option java_package = "com.graphql";
+
+import "google/api/annotations.proto";
+import "google/api/httpbody.proto";
+
+// protoc -I../../googleapis -I. --include_imports --include_source_info   --descriptor_set_out=gen/proto.pb proto/graphql_api.proto
+// grpc_tools_ruby_protoc -I ../../googleapis/ -I proto/ --ruby_out=gen/ --grpc_out=gen/ proto/graphql_api.proto
+
+// The greeting service definition.
+service GraphqlAPI {
+  // Execute the graphql query.
+  rpc Execute(ExecuteRequest) returns (ExecuteResponse);
+
+  rpc HttpExecute(google.api.HttpBody) returns (ExecuteResponse) {
+    option (google.api.http) = {
+      post: "/graphql"
+      response_body: "body"
+    };
+  }
+}
+
+// The request message containing the body.
+message ExecuteRequest {
+  string body = 1;
+}
+
+// The request message containing the body.
+// message HttpExecuteRequest {
+  // google.api.HttpBody body = 1;
+  // string body = 1;
+// }
+
+
+// The response message containing the body.
+message ExecuteResponse {
+  string body = 1;
+}
